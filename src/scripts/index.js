@@ -1,5 +1,5 @@
 // импорт
-import './index.css';
+import '../styles/index.css';
 import {initialCards} from './components/cards';
 import {createCard, onDelete, putLike} from './components/card';
 import {openModal, closeModal, setupModalCloseHandlers} from './components/modal';

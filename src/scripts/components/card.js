@@ -1,6 +1,8 @@
+const cardTmp = document.querySelector('#card-template').content;
+
 // создание
 export function createCard(item, onDelete, putLike, openPopupImg) {
-    const cardTmp = document.querySelector('#card-template').content;
+    
     const card = cardTmp.querySelector('.card').cloneNode(true);
     const btnDelete = card.querySelector('.card__delete-button');
     const btnLike = card.querySelector('.card__like-button');
