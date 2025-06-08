@@ -120,6 +120,7 @@ const handleEditFormSubmit = (evt) => {
         .then((user) => {
             profileTitle.textContent = user.name;
             profileDescription.textContent = user.about;
+            closeModal(popupEditProfile);
         })
         .catch((err) => {
             console.log(`Ошибка: ${err}`);
@@ -128,7 +129,6 @@ const handleEditFormSubmit = (evt) => {
             submitButton.textContent = "Сохранить";
             submitButton.disabled = false;            
         });
-    closeModal(popupEditProfile);
 }
 const handleEditFormProfileImageSubmit = (evt) => {
     evt.preventDefault();
@@ -182,11 +182,11 @@ const handleDeleteFormSubmit = () => {
         .then(() => {
             onDelete(selectorCardToDelete);
             closeModal(popupDeleteCard);
+            cardToDelete = null;
+            selectorCardToDelete = null; 
         })
         .catch((err) => {
             console.log(`Ошибка: ${err}`);
-            cardToDelete = null;
-            selectorCardToDelete = null; 
         })
         .finally(() => {
             submitDeleteButton.textContent = "Да";

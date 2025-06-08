@@ -22,6 +22,7 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
 const hideInputError = (formElement, inputElement, config) => {
   const errorElement = formElement.querySelector(`.${inputElement.name}-error`);
   inputElement.classList.remove(config.inputErrorClass);
+  inputElement.setCustomValidity("");
   errorElement.classList.remove(config.errorClass);
   errorElement.textContent = '';
 };
